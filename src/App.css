@@ -1,0 +1,144 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.wave {
+  opacity: 0.4;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  background: #0af;
+  width: 180vw;
+  height: 180vw;
+  margin-left: -90vw;
+  margin-top: -178vw;
+  transform-origin: 50% 48%;
+  border-radius: 40%;
+  animation: drift 10000ms infinite linear;
+}
+
+.wave.-three {
+  animation: drift 11000ms infinite linear;
+}
+
+.wave.-two {
+  animation: drift 13500ms infinite linear;
+  opacity: 0.1;
+  background: yellow;
+}
+
+@keyframes drift {
+  from {
+    transform: rotate(0deg);
+  }
+  from {
+    transform: rotate(360deg);
+  }
+}
+
+.box:after {
+  content: '';
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(#e8a, 1),
+    rgba(#def, 0) 80%,
+    rgba(white, 0.5)
+  );
+  z-index: 11;
+  transform: translate3d(0, 0, 0);
+}
+
+.title {
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  transform: translate3d(0, 0, 0);
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-top: 50px;
+  font-size: 50px;
+  text-shadow: 0 1px 0 rgba(black, 0.1);
+  text-indent: 0.3em;
+}
+
+.title > span .ti-cursor {
+  color: blue;
+  margin-left: 5px;
+  margin-bottom: 10px;
+  font-size: 55px;
+}
+
+.animated-title {
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 5px;
+  width: 200vh;
+  max-width: 100%;
+  height: auto;
+  padding: 100px 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.animated-title:nth-child(2) {
+  margin-top: 15vh;
+  transform: rotate(3deg);
+}
+
+.animated-title:nth-child(3) {
+  transform: rotate(-2deg);
+}
+
+.track {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.animated-title:nth-child(2) .track {
+  animation: move_first 15s linear infinite;
+}
+
+.animated-title:nth-child(3) .track {
+  animation: move_second 20s linear infinite;
+}
+
+.content {
+  padding: 8px 0;
+  color: white;
+}
+
+.animated-title:nth-child(2) .track .content {
+  background-color: red;
+}
+
+.animated-title:nth-child(3) .track .content {
+  background-color: blue;
+}
+
+@keyframes move_first {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes move_second {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
