@@ -1,0 +1,37 @@
+.wave {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  width: 180vw;
+  height: 180vw;
+  margin-left: -90vw;
+  margin-top: -178vw;
+  border-radius: 40%;
+}
+
+.wave.-one {
+  animation: waveAnimation 10000ms infinite linear;
+  opacity: 0.5;
+  background: #0af;
+}
+
+.wave.-two {
+  animation: waveAnimation 13500ms infinite linear;
+  opacity: 0.1;
+  background: yellow;
+}
+
+.wave.-three {
+  animation: waveAnimation 11000ms infinite linear;
+  opacity: 0.1;
+  background: #e8a;
+}
+
+@keyframes waveAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

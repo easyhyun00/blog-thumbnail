@@ -5,9 +5,23 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@font-face {
+  font-family: 'PyeongChang';
+  src: url('./fonts/PyeongChangPeace-Bold.otf');
+}
+
+@font-face {
+  font-family: 'DungGeunMo';
+  src: url('./fonts/DungGeunMo.ttf');
 }

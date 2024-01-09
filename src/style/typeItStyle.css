@@ -1,0 +1,21 @@
+.title {
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  transform: translate3d(0, 0, 0);
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-family: 'DungGeunMo';
+  margin-top: 50px;
+  font-size: 50px;
+  text-shadow: 0 1px 0 rgba(black, 0.1);
+  text-indent: 0.3em;
+}
+
+.title > span .ti-cursor {
+  color: #00aaff;
+  margin-left: 5px;
+  margin-bottom: 10px;
+  font-size: 55px;
+}

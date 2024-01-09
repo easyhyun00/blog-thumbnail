@@ -1,0 +1,64 @@
+.torizonScroll {
+  font-size: 30px;
+  font-weight: 400;
+  font-family: 'PyeongChang';
+  letter-spacing: 5px;
+  width: 200vh;
+  margin-top: 18vh;
+  padding: 20px 0;
+}
+
+.torizonScroll:nth-child(2) {
+  transform: rotate(3deg);
+}
+
+.torizonScroll:nth-child(3) {
+  transform: rotate(-2deg);
+}
+
+.torizonScroll > div {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.torizonScroll:nth-child(2) > div {
+  animation: move_first 15s linear infinite;
+}
+
+.torizonScroll:nth-child(3) > div {
+  animation: move_second 20s linear infinite;
+}
+
+.torizonScroll > div > p {
+  padding: 8px 0;
+  color: white;
+}
+
+.torizonScroll:nth-child(2) > div > p {
+  background: linear-gradient(to top, #0becb8, #a0f68b);
+  box-shadow: 8px 8px 20px 0px rgba(0, 0, 0, 0.5);
+}
+
+.torizonScroll:nth-child(3) > div > p {
+  background: linear-gradient(to bottom, #00c6ff, #00dce4);
+  box-shadow: -8px -8px 20px 0px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes move_first {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes move_second {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

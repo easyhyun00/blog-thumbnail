@@ -1,3 +1,5 @@
+import '../style/waveStyle.css';
+
 function WaveComponent() {
   return (
     <>
