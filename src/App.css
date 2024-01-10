@@ -1,0 +1,8 @@
+.secondDiv {
+  height: 135vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center; /* aligns children horizontally in the center */
+  align-items: center;
+}

@@ -1,0 +1,82 @@
+.imageButton {
+  position: relative;
+  height: 350px;
+}
+
+.imageButton:hover .imageBackdrop {
+  opacity: 0.2;
+}
+
+.imageButton:focus .imageBackdrop {
+  opacity: 0;
+}
+
+.imageButton:focus .image {
+  border: 2px solid black;
+}
+
+.imageSrc {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center 40%;
+}
+
+.image {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageBackdrop {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: black;
+  opacity: 0.4;
+  transition: opacity 0.3s;
+}
+
+.imageTitle {
+  position: relative;
+  padding: 4px;
+  padding-top: 2px;
+  padding-bottom: 6px; /* 수정 가능 */
+}
+
+.imageMarked {
+  height: 4px;
+  width: 18px;
+  background-color: white;
+  position: absolute;
+  bottom: 10px;
+  left: calc(50% - 9px);
+  transition: opacity 0.3s;
+}
+
+.imageButton:hover .image > span,
+.imageButton:focus .image > span {
+  color: black;
+}
+
+.imageButton:hover .imageMarked,
+.imageButton:focus .imageMarked {
+  background-color: black;
+}
+
+@media (max-width: 1200px) {
+  .imageButton {
+    width: 100% !important;
+    height: 200px;
+  }
+}

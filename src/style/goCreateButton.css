@@ -1,0 +1,19 @@
+.goCreate {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.goCreate > button {
+  font-family: 'DungGeunMo';
+  font-size: 20px;
+  font-weight: 700;
+  border-width: 2px;
+  box-shadow: 5px 5px 20px 0px rgba(80, 110, 138, 0.5);
+}
+
+.goCreate > button:hover {
+  border-width: 2px;
+  background-color: rgb(205, 225, 253);
+}
