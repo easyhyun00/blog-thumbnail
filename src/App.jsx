@@ -8,28 +8,29 @@ import SubTitleComponent from './components/SubTitleComponent';
 import './App.css';
 
 function App() {
-  const selectForm = useRef();
-  const [isVisible, setIsVisible] = useState(false);
+  const selectTemplateRef = useRef();
+  const makeThumbnailRef = useRef();
+  const [isVisibleSecond, setIsVisibleSecond] = useState(false);
+  const [isVisibleThird, setIsVisibleThird] = useState(false);
 
-  const scrollToDown = () => {
-    if (!isVisible) {
-      setIsVisible(true);
-    } else {
-      scrollIntoView();
-    }
+  const scrollToSecond = () => {
+    if (!isVisibleSecond) setIsVisibleSecond(true);
+    else scrollToRef(selectTemplateRef);
   };
 
-  const scrollIntoView = () => {
-    if (selectForm.current) {
-      selectForm.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
-    }
+  const scrollToThrid = () => {
+    if (!isVisibleThird) setIsVisibleThird(true);
+    else scrollToRef(makeThumbnailRef);
+  };
+
+  const scrollToRef = (ref) => {
+    ref.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
   };
 
   useEffect(() => {
-    if (isVisible) {
-      scrollIntoView();
-    }
-  }, [isVisible]);
+    if (isVisibleThird) scrollToRef(makeThumbnailRef);
+    else if (isVisibleSecond) scrollToRef(selectTemplateRef);
+  }, [isVisibleThird, isVisibleSecond]);
 
   return (
     <>
@@ -39,12 +40,17 @@ function App() {
           <TypeItComponent />
         </div>
         <TextHorizonScroll />
-        <GoCreateButton onClickButton={scrollToDown} />
+        <GoCreateButton onClickButton={scrollToSecond} />
       </div>
-      {isVisible && (
-        <div ref={selectForm} className="secondDiv">
+      {isVisibleSecond && (
+        <div ref={selectTemplateRef} className="secondDiv">
           <SubTitleComponent subtitleText={'원하는 템플릿을 선택하세요.'} />
-          <PhotoButtonComponent />
+          <PhotoButtonComponent onClickImage={scrollToThrid} />
+        </div>
+      )}
+      {isVisibleThird && (
+        <div ref={makeThumbnailRef} className="thirdDiv">
+          <h1>세번째</h1>
         </div>
       )}
     </>

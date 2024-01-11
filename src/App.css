@@ -6,3 +6,12 @@
   justify-content: center; /* aligns children horizontally in the center */
   align-items: center;
 }
+
+.thirdDiv {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center; /* aligns children horizontally in the center */
+  align-items: center;
+}

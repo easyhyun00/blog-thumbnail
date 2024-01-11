@@ -17,7 +17,11 @@ const images = [
   },
 ];
 
-export default function PhotoButtonComponent() {
+function PhotoButtonComponent({ onClickImage }) {
+  // const handleButtonClick = (title) => {
+  //   onClickImage(title);
+  // };
+
   return (
     <Box
       sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 300, width: '80%' }}
@@ -28,13 +32,14 @@ export default function PhotoButtonComponent() {
           key={image.title}
           className="imageButton"
           style={{ width: '50%' }}
+          onClick={() => onClickImage(image.title)}
         >
-          <span
+          <div
             className="imageSrc"
             style={{ backgroundImage: `url(${image.url})` }}
           />
-          <span className="imageBackdrop" />
-          <span className="image">
+          <div className="imageBackdrop" />
+          <div className="image">
             <Typography
               component="span"
               variant="subtitle1"
@@ -50,11 +55,13 @@ export default function PhotoButtonComponent() {
               }}
             >
               {image.title}
-              <span className="imageMarked" />
+              <div className="imageMarked" />
             </Typography>
-          </span>
+          </div>
         </ButtonBase>
       ))}
     </Box>
   );
 }
+
+export default PhotoButtonComponent;
