@@ -5,6 +5,7 @@ import TextHorizonScroll from './components/TextHorizonScrollComponent';
 import GoCreateButton from './components/GoCreateButtonComponent';
 import PhotoButtonComponent from './components/PhotoButtonComponent';
 import SubTitleComponent from './components/SubTitleComponent';
+import ThumbnaillMakeComponent from './components/thumbnailMakeBox/ThumbnailMakeComponent';
 import './App.css';
 
 function App() {
@@ -50,7 +51,7 @@ function App() {
       )}
       {isVisibleThird && (
         <div ref={makeThumbnailRef} className="thirdDiv">
-          <h1>세번째</h1>
+          <ThumbnaillMakeComponent />
         </div>
       )}
     </>

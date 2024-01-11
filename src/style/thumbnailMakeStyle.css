@@ -1,0 +1,49 @@
+.board {
+  width: 90vw;
+  display: flex;
+  flex-wrap: wrap;
+  > div {
+    margin-inline: 5px;
+  }
+}
+
+.contentOutput {
+  background-color: pink;
+  flex: 1 1 60%;
+}
+
+.contentInput {
+  flex: 1 1 35%;
+  > div {
+    width: 100%;
+    margin-block: 10px;
+    > label {
+      font-weight: 700;
+    }
+    > input {
+      display: none;
+    }
+    > button {
+      font-weight: 700;
+      width: 100%;
+    }
+  }
+}
+
+.contentDesign {
+  background-color: greenyellow;
+  flex: 0 0 98%;
+}
+
+@media screen and (max-width: 600px) {
+  .contentOutput,
+  .contentInput,
+  .contentDesign {
+    flex: 0 0 100%;
+  }
+}
+
+.subHead {
+  font-family: 'DungGeunMo';
+  font-size: 1.3rem;
+}
