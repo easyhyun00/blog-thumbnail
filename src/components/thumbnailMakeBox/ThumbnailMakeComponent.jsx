@@ -1,6 +1,7 @@
 import '../../style/thumbnailMakeStyle.css';
 import SubheadComponent from './SubheadComponent';
 import ContentInputComponent from './ContentInputComponent';
+import ContentDesignComponent from './ContentDesignComponent';
 
 function ThumbnaillMakeComponent() {
   return (
@@ -9,9 +10,7 @@ function ThumbnaillMakeComponent() {
         <SubheadComponent subheadText={'결과물'} />
       </div>
       <ContentInputComponent />
-      <div className="contentDesign">
-        <SubheadComponent subheadText={'꾸미기'} />
-      </div>
+      <ContentDesignComponent />
     </div>
   );
 }

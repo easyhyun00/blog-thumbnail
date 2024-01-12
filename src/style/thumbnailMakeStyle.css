@@ -31,11 +31,10 @@
 }
 
 .contentDesign {
-  background-color: greenyellow;
   flex: 0 0 98%;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .contentOutput,
   .contentInput,
   .contentDesign {
@@ -46,4 +45,92 @@
 .subHead {
   font-family: 'DungGeunMo';
   font-size: 1.3rem;
+}
+
+.designArea {
+  display: flex;
+  > div {
+    flex: 1;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .designArea {
+    flex-direction: column;
+  }
+}
+
+.background {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  > div {
+    flex: 1;
+    position: relative;
+    display: inline-block;
+    > input {
+      width: 90%;
+      margin-inline: 10px;
+      text-align: center;
+      border: 0px;
+      border-radius: 20px;
+      padding-block: 15px;
+      padding-inline: 0px;
+      box-shadow: 10px 10px 14px 1px rgba(00, 00, 00, 0.2);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+    > input:hover,
+    :focus {
+      cursor: pointer;
+    }
+    > div {
+      position: absolute;
+      bottom: 80%;
+      left: 50%;
+      z-index: 2;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .background > div > div {
+    top: 80%;
+    left: 5%;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .chrome-picker {
+    width: 200px !important;
+    height: 220px !important;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .chrome-picker {
+    width: 180px !important;
+    height: 210px !important;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .chrome-picker {
+    width: 155px !important;
+    height: 195px !important;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .chrome-picker {
+    width: 170px !important;
+    height: 205px !important;
+  }
+}
+
+.label {
+  margin-top: 0px;
+  font-family: 'DungGeunMo';
+  font-size: 1rem;
+  font-weight: 100;
 }
